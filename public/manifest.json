@@ -1,0 +1,24 @@
+{
+  "name": "Luca Altimare - Backend Developer",
+  "short_name": "LRA Portfolio",
+  "description": "Backend Developer specializzato in architetture IT, Python, PHP e AI Integrations",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#050508",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
