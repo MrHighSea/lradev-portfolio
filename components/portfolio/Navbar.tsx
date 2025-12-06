@@ -22,7 +22,7 @@ export default function Navbar() {
 
       // Determine active section
       const sections = ["#", "#competenze", "#expertise", "#contatti"];
-      const sectionElements = sections.map(id => 
+      const sectionElements = sections.map(id =>
         id === "#" ? document.body : document.querySelector(id)
       );
 
@@ -30,7 +30,7 @@ export default function Navbar() {
 
       for (let i = sectionElements.length - 1; i >= 0; i--) {
         const element = sectionElements[i];
-        if (element) {
+        if (element && element instanceof HTMLElement) {
           const offsetTop = i === 0 ? 0 : element.offsetTop;
           if (scrollPosition >= offsetTop) {
             setActiveSection(sections[i]);
