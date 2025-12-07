@@ -1,6 +1,6 @@
 ---
 title: "Benvenuto nel mio Blog Tecnico"
-date: "2025-12-07"
+date: "2025-12-07T09:00:00"
 excerpt: "Il primo articolo del mio blog dove condivido esperienze, tutorial e riflessioni sul mondo dello sviluppo backend, architetture software e AI."
 category: "News"
 author: "Luca Altimare"

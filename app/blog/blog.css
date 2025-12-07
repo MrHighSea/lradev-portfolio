@@ -1,0 +1,196 @@
+/* Blog post custom styles */
+
+/* Tabelle completamente riviste */
+.prose table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 3rem 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #334155;
+}
+
+.prose thead {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+.prose thead th {
+  color: white !important;
+  font-weight: 800 !important;
+  font-size: 0.95rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1.5rem 1.75rem !important;
+  text-align: center !important;
+  border: none !important;
+  white-space: nowrap;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.prose thead th:first-child {
+  text-align: left !important;
+}
+
+.prose tbody {
+  background: transparent;
+}
+
+.prose tbody tr {
+  border-bottom: 1px solid #334155 !important;
+  transition: all 0.3s ease;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.prose tbody tr:nth-child(even) {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.prose tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+.prose tbody tr:hover {
+  background: rgba(59, 130, 246, 0.15) !important;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.prose tbody td {
+  padding: 1.25rem 1.75rem !important;
+  color: #e5e7eb !important;
+  font-size: 1.05rem !important;
+  border: none !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.prose tbody td:first-child {
+  text-align: left !important;
+  font-weight: 700;
+  color: #60a5fa !important;
+  font-size: 1.1rem !important;
+}
+
+/* Emoji più grandi e visibili */
+.prose td:has-text("✅"),
+.prose td:has-text("❌"),
+.prose td:has-text("⚠️") {
+  font-size: 1.5rem !important;
+}
+
+/* Icone per checkmark e cross nelle tabelle */
+.prose td:has-text("✅")::before {
+  content: "✅";
+  margin-right: 0.5rem;
+}
+
+.prose td:has-text("❌")::before {
+  content: "❌";
+  margin-right: 0.5rem;
+}
+
+.prose td:has-text("⚠️")::before {
+  content: "⚠️";
+  margin-right: 0.5rem;
+}
+
+/* Code blocks migliorati */
+.prose pre {
+  position: relative;
+  margin: 2.5rem 0 !important;
+  padding: 1.5rem !important;
+}
+
+.prose pre code {
+  font-size: 0.95rem !important;
+  line-height: 1.8 !important;
+  font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+}
+
+/* Inline code distintivo */
+.prose :not(pre) > code {
+  font-weight: 600 !important;
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.9em !important;
+}
+
+/* Liste con migliore spaziatura */
+.prose ul,
+.prose ol {
+  padding-left: 1.5rem;
+}
+
+.prose ul li,
+.prose ol li {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+  padding-left: 0.5rem;
+}
+
+/* Paragrafi con più respiro */
+.prose p {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Gerarchia colori headings */
+.prose h1 {
+  color: white !important;
+}
+
+.prose h2 {
+  color: white !important;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.prose h3 {
+  color: #60a5fa !important;
+}
+
+.prose h4 {
+  color: #93c5fd !important;
+}
+
+/* Responsive table wrapper */
+@media (max-width: 768px) {
+  .prose table {
+    font-size: 0.875rem;
+  }
+
+  .prose th,
+  .prose td {
+    padding: 0.5rem;
+  }
+
+  .prose th {
+    font-size: 0.75rem;
+  }
+}
+
+/* Scrollbar personalizzata per tabelle */
+.prose table::-webkit-scrollbar {
+  height: 8px;
+}
+
+.prose table::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+.prose table::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+.prose table::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}

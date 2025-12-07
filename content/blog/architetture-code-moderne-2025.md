@@ -1,6 +1,6 @@
 ---
 title: "Architetture di Code Moderne: Celery, RabbitMQ, Redis o Temporal?"
-date: "2025-12-07"
+date: "2025-12-07T14:30:00"
 excerpt: "Guida completa alla scelta del sistema di queueing giusto per applicazioni backend e AI nel 2025. Confronto dettagliato tra Celery, RabbitMQ, Redis e Temporal."
 category: "Backend"
 author: "Luca Altimare"
