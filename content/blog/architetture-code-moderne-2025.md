@@ -27,12 +27,25 @@ Ma nel 2025, le scelte sono molte — e confuse.
 
 Confrontiamo i quattro sistemi più dibattuti:
 
-| Tool       | Tipo                      | Linguaggio | Punto di Forza           |
-|------------|---------------------------|------------|--------------------------|
-| Celery     | Task queue (con broker)   | Python     | Job ML, task semplici    |
-| RabbitMQ   | Message broker (AMQP)     | Qualsiasi  | Microservizi, ordinamento|
-| Redis      | Key-value + pub/sub       | Qualsiasi  | Code veloci, caching     |
-| Temporal   | Workflow engine + state   | Polyglot   | Workflow distribuiti, retry, agent stateful |
+### 🐍 **Celery** - Task Queue (con broker)
+- **Linguaggio:** Python
+- **Punto di forza:** Job ML, task semplici in background
+- **Quando usarlo:** Processing immagini, chiamate API async, job schedulati
+
+### 🐰 **RabbitMQ** - Message Broker (AMQP)
+- **Linguaggio:** Qualsiasi
+- **Punto di forza:** Microservizi, garantisce ordinamento messaggi
+- **Quando usarlo:** Sistemi distribuiti enterprise, event-driven architecture
+
+### ⚡ **Redis** - Key-value + Pub/Sub
+- **Linguaggio:** Qualsiasi
+- **Punto di forza:** Code velocissime, caching integrato
+- **Quando usarlo:** MVP rapidi, chatbot, notifiche real-time
+
+### ⏰ **Temporal** - Workflow Engine + State
+- **Linguaggio:** Polyglot (Python, Go, TypeScript, Java)
+- **Punto di forza:** Workflow distribuiti con stato, retry automatici, agent AI
+- **Quando usarlo:** Orchestrazione complessa, saga pattern, AI agent multi-step
 
 ## 1. Celery: Il Cavallo di Battaglia Python
 
@@ -181,26 +194,73 @@ class AIAgentWorkflow:
 
 ## Tabella Comparativa (Edizione 2025)
 
-| Feature                          | Celery | RabbitMQ | Redis | Temporal |
-|----------------------------------|--------|----------|-------|----------|
-| Language-native (Python)         | ✅     | ❌       | ✅    | ✅       |
-| Retry & scheduling               | ✅     | ⚠️       | ⚠️    | ✅       |
-| Workflow distribuiti             | ❌     | ❌       | ❌    | ✅       |
-| Visibilità & monitoring          | ⚠️     | ✅       | ⚠️    | ✅       |
-| Scala su cluster                 | ⚠️     | ✅       | ✅    | ✅       |
-| Gestisce agent stateful          | ❌     | ❌       | ❌    | ✅       |
-| Facile da deployare              | ✅     | ⚠️       | ✅    | ⚠️       |
+### **Celery**
+- ✅ **Language-native Python**
+- ✅ **Retry & scheduling**
+- ❌ **Workflow distribuiti**
+- ⚠️ **Visibilità & monitoring** (richiede Flower)
+- ⚠️ **Scala su cluster** (limitato)
+- ❌ **Gestisce agent stateful**
+- ✅ **Facile da deployare**
+
+### **RabbitMQ**
+- ❌ **Language-native Python** (multilingua)
+- ⚠️ **Retry & scheduling** (manuale)
+- ❌ **Workflow distribuiti**
+- ✅ **Visibilità & monitoring**
+- ✅ **Scala su cluster**
+- ❌ **Gestisce agent stateful**
+- ⚠️ **Facile da deployare** (setup complesso)
+
+### **Redis**
+- ✅ **Language-native Python**
+- ⚠️ **Retry & scheduling** (manuale)
+- ❌ **Workflow distribuiti**
+- ⚠️ **Visibilità & monitoring** (tool esterni)
+- ✅ **Scala su cluster**
+- ❌ **Gestisce agent stateful**
+- ✅ **Facile da deployare**
+
+### **Temporal**
+- ✅ **Language-native Python** (e altri)
+- ✅ **Retry & scheduling**
+- ✅ **Workflow distribuiti**
+- ✅ **Visibilità & monitoring**
+- ✅ **Scala su cluster**
+- ✅ **Gestisce agent stateful**
+- ⚠️ **Facile da deployare** (richiede infra)
 
 ## Quando Usare Cosa?
 
-| Caso d'Uso                                    | Scegli Questo       |
-|-----------------------------------------------|---------------------|
-| Chiamate async a modelli (GPT, summarizer)   | Celery + Redis      |
-| Code microservizi ad alte prestazioni        | RabbitMQ            |
-| MVP GenAI o chatbot piccolo                   | Redis + RQ/Dramatiq |
-| Workflow AI agent multi-step (RAG, tools)     | Temporal            |
-| Logica business complessa (con stato)         | Temporal            |
-| Stream di eventi (non-critici)                | Redis pub/sub       |
+### 🤖 Chiamate async a modelli (GPT, summarizer)
+**→ Celery + Redis**
+
+Perfetto per task ML che devono essere eseguiti in background senza bloccare l'API.
+
+### ⚡ Code microservizi ad alte prestazioni
+**→ RabbitMQ**
+
+Quando hai bisogno di routing complesso e garanzie di delivery tra servizi.
+
+### 🚀 MVP GenAI o chatbot piccolo
+**→ Redis + RQ/Dramatiq**
+
+La soluzione più semplice per iniziare velocemente con code leggere.
+
+### 🔄 Workflow AI agent multi-step (RAG, tools)
+**→ Temporal**
+
+Quando i tuoi agent devono eseguire task complessi con stato persistente.
+
+### 📊 Logica business complessa (con stato)
+**→ Temporal**
+
+Saga pattern, transazioni distribuite, orchestrazione multi-servizio.
+
+### 📡 Stream di eventi (non-critici)
+**→ Redis pub/sub**
+
+Notifiche real-time, aggiornamenti live, broadcasting semplice.
 
 ## Pro Tip: Combinali
 
