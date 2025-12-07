@@ -1,14 +1,13 @@
 ---
 title: "SQL vs NoSQL"
-date: "2025-12-07T13:45:00:00"
+date: "2025-12-07T18:00:00"
 excerpt: "I nomi dei due principali tipi di database, SQL e NoSQL, indicano se sono scritti solo nel linguaggio di query strutturato (SQL). Questo articolo esplorerà le differenze tra questi database e come determinare facilmente quale tipo è più adatto alla tua azienda."
 category: "Backend"
 author: "Luca Altimare"
 ---
+## Definizioni: SQL e NoSQL
 
 I nomi delle due principali tipologie di database, SQL e NoSQL, indicano fondamentalmente se il sistema utilizza esclusivamente lo Structured Query Language (SQL). Questo articolo esplorerà le differenze sostanziali tra questi database e ti aiuterà a determinare quale soluzione sia la migliore per il tuo business.
-
-## Definizioni: SQL e NoSQL
 
 
 SQL (Structured Query Language) è il linguaggio standard per database
