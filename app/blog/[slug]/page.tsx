@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/portfolio/Navbar";
+import { ArticleStructuredData } from "@/components/StructuredData";
 import "../blog.css";
 
 interface PageProps {
@@ -43,6 +44,14 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
+      <ArticleStructuredData
+        title={post.title}
+        description={post.excerpt}
+        datePublished={post.date}
+        slug={post.slug}
+        category={post.category || 'Backend'}
+        author={post.author || 'Luca Altimare'}
+      />
       <Navbar />
 
       {/* Hero Section */}
