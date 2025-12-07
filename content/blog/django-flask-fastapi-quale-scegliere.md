@@ -2,7 +2,7 @@
 title: "Django vs Flask vs FastAPI: Quale Framework Python Scegliere nel 2025?"
 date: "2025-12-07T16:00:00"
 excerpt: "Guida completa al confronto tra i tre framework Python più popolari per lo sviluppo web. Scopri quale scegliere in base al tuo progetto: Django, Flask o FastAPI."
-category: "Backend"
+category: "Web Development"
 author: "Luca Altimare"
 ---
 
