@@ -46,11 +46,11 @@ export default async function BlogPostPage({ params }: PageProps) {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-b from-[#050508] via-gray-900 to-[#050508] border-b border-gray-800">
+      <div className="relative bg-gradient-to-b from-[#050508] via-gray-900 to-[#050508] border-b border-gray-800 pt-24">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-transparent" />
 
-        <div className="relative max-w-5xl mx-auto px-6 py-16">
+        <div className="relative max-w-5xl mx-auto px-6 py-12">
           {/* Back Button */}
           <Link
             href="/blog"
