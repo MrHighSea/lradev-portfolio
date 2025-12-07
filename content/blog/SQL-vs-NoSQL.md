@@ -12,19 +12,20 @@ I nomi delle due principali tipologie di database, SQL e NoSQL, indicano fondame
 
 SQL (Structured Query Language) è il linguaggio standard per database
 relazionali che organizzano i dati in tabelle (righe e colonne) con schemi fissi, garantendo integrità e coerenza tramite relazioni complesse, mentre NoSQL (Not Only SQL) è un termine ombrello per database non relazionali, che offrono modelli di dati più flessibili (documenti, chiave-valore, grafi) per gestire grandi volumi di dati strutturati, semi-strutturati e non strutturati, scalando orizzontalmente e adattandosi a cambiamenti rapidi. 
-SQL (Relazionale)
 
-    Struttura: Dati in tabelle con righe e colonne, schema predefinito (es. MySQL, PostgreSQL, Oracle).
-    Linguaggio: SQL (Structured Query Language).
-    Scalabilità: Principalmente verticale (aggiunta di risorse al server).
-    Ideale per: Applicazioni con dati strutturati e relazioni complesse (es. transazioni bancarie). 
+##### SQL (Relazionale)
 
-NoSQL (Non Relazionale)
+**Struttura:** Dati in tabelle con righe e colonne, schema predefinito (es. MySQL, PostgreSQL, Oracle).
+**Linguaggio:** SQL (Structured Query Language).
+**Scalabilità:** Principalmente verticale (aggiunta di risorse al server).
+**Ideale per:** Applicazioni con dati strutturati e relazioni complesse (es. transazioni bancarie). 
 
-    Struttura: Modelli flessibili (documenti JSON, chiave-valore, grafi), schema dinamico (es. MongoDB, Cassandra).
-    Linguaggio: Varia a seconda del database, non un linguaggio standard unico.
-    Scalabilità: Orizzontale (aggiunta di più server/nodi), ideale per Big Data.
-    Ideale per: Dati non strutturati, Big Data, applicazioni dinamiche (es. social media, IoT). 
+##### NoSQL (Non Relazionale)
+
+**Struttura:** Modelli flessibili (documenti JSON, chiave-valore, grafi), schema dinamico (es. MongoDB, Cassandra).
+**Linguaggio:** Varia a seconda del database, non un linguaggio standard unico.
+**Scalabilità:** Orizzontale (aggiunta di più server/nodi), ideale per Big Data.
+**Ideale per:** Dati non strutturati, Big Data, applicazioni dinamiche (es. social media, IoT). 
 
 In sintesi, SQL è rigido e strutturato per dati interconnessi, mentre NoSQL è flessibile e scalabile per la varietà e il volume dei dati moderni. 
 
