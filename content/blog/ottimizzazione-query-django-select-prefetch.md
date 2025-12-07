@@ -1,6 +1,6 @@
 ---
 title: "Ottimizzazione Query Django: select_related vs prefetch_related"
-date: "2025-12-08T9:00:00"
+date: "2025-12-08T09:00:00"
 excerpt: "Guida completa all'ottimizzazione delle query Django per evitare il problema N+1. Scopri come usare select_related e prefetch_related con esempi pratici e casi d'uso reali."
 category: "Backend"
 author: "Luca Altimare"
