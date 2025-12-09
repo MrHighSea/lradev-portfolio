@@ -138,7 +138,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         <article className="max-w-4xl mx-auto">
 
         {/* Content */}
-        <div className="prose prose-invert prose-xl max-w-none
+        <div
+          className="prose prose-invert prose-xl max-w-none
           prose-headings:text-white prose-headings:font-bold prose-headings:tracking-tight
           prose-h1:text-5xl prose-h1:mt-16 prose-h1:mb-8 prose-h1:leading-tight
           prose-h2:text-4xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:border-b-2 prose-h2:border-blue-500/30 prose-h2:pb-4 prose-h2:leading-tight

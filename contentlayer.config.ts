@@ -53,13 +53,23 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Post],
-  mdx: {
+  markdown: {
     rehypePlugins: [
       rehypeSlug,
       [
         rehypePrettyCode,
         {
-          theme: 'github-dark',
+          theme: 'one-dark-pro',
+          keepBackground: false,
+          onVisitLine(node: any) {
+            // Prevent lines from collapsing in `display: grid` mode
+            if (node.children.length === 0) {
+              node.children = [{ type: 'text', value: ' ' }]
+            }
+          },
+          onVisitHighlightedLine(node: any) {
+            node.properties.className = ['highlighted']
+          },
         },
       ],
       [

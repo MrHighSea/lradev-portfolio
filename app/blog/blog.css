@@ -1,5 +1,444 @@
 /* Blog post custom styles */
 
+/* ============================================
+   SYNTAX HIGHLIGHTING (rehype-pretty-code)
+   ============================================ */
+
+/* Token colors per Python/JavaScript/etc */
+.prose pre code {
+  display: block;
+  font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+  font-size: 0.95rem !important;
+  line-height: 1.8 !important;
+}
+
+/* Syntax highlighting colors */
+.prose code [data-line] {
+  padding: 0 1rem;
+  border-left: 2px solid transparent;
+}
+
+/* Highlighted lines */
+.prose code [data-highlighted-line] {
+  background: rgba(96, 165, 250, 0.1);
+  border-left-color: #60a5fa;
+}
+
+/* Keywords: def, class, import, return, etc. */
+.prose code .token.keyword {
+  color: #c678dd !important;
+  font-weight: 600;
+}
+
+/* Function names */
+.prose code .token.function {
+  color: #61afef !important;
+}
+
+/* Class names */
+.prose code .token.class-name {
+  color: #e5c07b !important;
+}
+
+/* Strings */
+.prose code .token.string {
+  color: #98c379 !important;
+}
+
+/* Numbers */
+.prose code .token.number {
+  color: #d19a66 !important;
+}
+
+/* Comments */
+.prose code .token.comment {
+  color: #5c6370 !important;
+  font-style: italic;
+}
+
+/* Operators: =, +, -, etc. */
+.prose code .token.operator {
+  color: #56b6c2 !important;
+}
+
+/* Punctuation: (), {}, [], etc. */
+.prose code .token.punctuation {
+  color: #abb2bf !important;
+}
+
+/* Built-in functions: print, len, etc. */
+.prose code .token.builtin {
+  color: #e06c75 !important;
+}
+
+/* Decorators: @property, @staticmethod */
+.prose code .token.decorator {
+  color: #c678dd !important;
+  font-style: italic;
+}
+
+/* Variables */
+.prose code .token.variable {
+  color: #e06c75 !important;
+}
+
+/* Parameters */
+.prose code .token.parameter {
+  color: #d19a66 !important;
+  font-style: italic;
+}
+
+/* ============================================
+   LAYOUT GENERALE ARTICOLO
+   ============================================ */
+
+/* Contenitore principale articolo con pattern */
+.prose {
+  position: relative;
+}
+
+/* Background pattern sottile per spezzare la monotonia */
+.prose > *:nth-child(4n) {
+  position: relative;
+}
+
+.prose > *:nth-child(4n)::before {
+  content: '';
+  position: absolute;
+  left: -9999px;
+  right: -9999px;
+  top: -2rem;
+  bottom: -2rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ============================================
+   PARAGRAFI
+   ============================================ */
+
+/* Paragrafi con più carattere */
+.prose p {
+  margin-top: 1.75rem !important;
+  margin-bottom: 1.75rem !important;
+  line-height: 1.9 !important;
+  font-size: 1.125rem !important;
+  color: #d1d5db !important;
+}
+
+/* Primo paragrafo dopo h2/h3 più grande */
+.prose h2 + p,
+.prose h3 + p {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  color: #e5e7eb !important;
+  margin-top: 2rem !important;
+}
+
+/* Drop cap per il primo paragrafo dell'articolo (opzionale) */
+.prose > p:first-of-type::first-letter {
+  font-size: 3.5rem;
+  font-weight: 800;
+  float: left;
+  line-height: 1;
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   HEADINGS CON DECORAZIONI
+   ============================================ */
+
+/* H2 con decorazione laterale e sfondo */
+.prose h2 {
+  position: relative;
+  padding-left: 1.5rem !important;
+  margin-top: 4rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.prose h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 80%;
+  background: linear-gradient(180deg, #60a5fa 0%, #a78bfa 100%);
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+}
+
+/* H3 con badge stile */
+.prose h3 {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem 1.25rem !important;
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 4px solid #60a5fa;
+  border-radius: 0 8px 8px 0;
+}
+
+/* H4 più sottile ma elegante */
+.prose h4 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.25rem !important;
+  font-size: 1.35rem !important;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   BLOCKQUOTE - STILE MAGAZINE
+   ============================================ */
+
+.prose blockquote {
+  position: relative;
+  margin: 3rem 0 !important;
+  padding: 2rem 2rem 2rem 3rem !important;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-left: 6px solid transparent !important;
+  border-image: linear-gradient(180deg, #60a5fa 0%, #a78bfa 100%) 1 !important;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  font-style: normal !important;
+}
+
+.prose blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  font-size: 6rem;
+  font-weight: 800;
+  color: rgba(96, 165, 250, 0.2);
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.prose blockquote p {
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+  color: #f3f4f6 !important;
+  margin: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   LISTE CON STILE
+   ============================================ */
+
+.prose ul,
+.prose ol {
+  padding-left: 0 !important;
+  margin: 2rem 0 !important;
+}
+
+.prose ul li,
+.prose ol li {
+  position: relative;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  padding-left: 2.5rem !important;
+  line-height: 1.8 !important;
+  font-size: 1.1rem !important;
+  color: #e5e7eb !important;
+  list-style: none !important;
+}
+
+/* Bullet custom per UL */
+.prose ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
+  transform: rotate(45deg);
+}
+
+/* Numeri custom per OL */
+.prose ol {
+  counter-reset: custom-counter;
+}
+
+.prose ol li::before {
+  counter-increment: custom-counter;
+  content: counter(custom-counter);
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  color: white;
+  font-weight: 800;
+  font-size: 0.85rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+/* Liste nidificate */
+.prose ul ul li::before,
+.prose ol ul li::before {
+  width: 8px;
+  height: 8px;
+  top: 0.75rem;
+  background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%);
+  opacity: 0.7;
+}
+
+/* ============================================
+   CODE BLOCKS PREMIUM
+   ============================================ */
+
+.prose pre {
+  position: relative;
+  margin: 3rem 0 !important;
+  margin-top: 4rem !important;
+  padding: 2rem !important;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  border: 1px solid #334155 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Header del code block - mostrato solo se c'è data-language */
+.prose pre[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: -2.5rem;
+  left: 0;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 8px 8px 0 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 -4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Per code blocks senza linguaggio specificato, niente header */
+.prose pre:not([data-language]) {
+  margin-top: 3rem !important;
+}
+
+/* Pulsante copy (decorativo) */
+.prose pre::after {
+  content: '📋';
+  position: absolute;
+  top: 0.75rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.prose pre:hover::after {
+  opacity: 1;
+}
+
+/* Scrollbar del code block */
+.prose pre::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.prose pre::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+.prose pre::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+.prose pre::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* ============================================
+   INLINE CODE
+   ============================================ */
+
+.prose :not(pre) > code {
+  font-weight: 600 !important;
+  padding: 0.3rem 0.6rem !important;
+  font-size: 0.9em !important;
+  background: rgba(59, 130, 246, 0.15) !important;
+  border: 1px solid rgba(96, 165, 250, 0.3) !important;
+  border-radius: 6px !important;
+  color: #93c5fd !important;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.1);
+}
+
+/* ============================================
+   STRONG - ENFASI
+   ============================================ */
+
+.prose strong {
+  font-weight: 800 !important;
+  color: #f3f4f6 !important;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.2) 0%, rgba(167, 139, 250, 0.2) 100%);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+.prose a {
+  color: #60a5fa !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(96, 165, 250, 0.3) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+  transition: all 0.2s ease !important;
+}
+
+.prose a:hover {
+  color: #93c5fd !important;
+  text-decoration-color: rgba(147, 197, 253, 0.6) !important;
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+}
+
+/* ============================================
+   HR - SEPARATORI
+   ============================================ */
+
+.prose hr {
+  margin: 4rem 0 !important;
+  border: none !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent 0%, #60a5fa 50%, transparent 100%) !important;
+  opacity: 0.3;
+}
+
+/* ============================================
+   TABELLE
+   ============================================ */
+
 /* Tabelle completamente riviste */
 .prose table {
   width: 100%;
