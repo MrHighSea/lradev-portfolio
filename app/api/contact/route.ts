@@ -18,8 +18,8 @@ export async function POST(request: Request) {
 
     // Send email using Resend
     const data = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'info@lradev.app',
+      from: 'info@lradev.app',
+      to: 'luca.altimare.98@gmail.com',
       subject: `New Contact Form Message from ${name}`,
       replyTo: email,
       html: `
