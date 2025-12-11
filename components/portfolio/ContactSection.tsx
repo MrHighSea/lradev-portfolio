@@ -164,7 +164,7 @@ export default function ContactSection() {
             <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6">
               <h3 className="text-lg font-semibold text-white mb-4">Contatto Diretto</h3>
               <div className="space-y-4">
-                <a href="mailto:luca.altimare.98@gmail.com" className="flex items-center gap-4 group">
+                <a href="mailto:contatto@lradev.app" className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg">
                     <Mail className="w-5 h-5 text-white" />
                   </div>
